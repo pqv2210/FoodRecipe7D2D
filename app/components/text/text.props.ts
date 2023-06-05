@@ -1,4 +1,5 @@
 import { TxKeyPath, TxOptions } from "@i18n"
+import { FontsTypes } from "@utils"
 import { TextProps as RNTextProps, TextStyle } from "react-native"
 
 export interface TextProps extends RNTextProps {
@@ -9,4 +10,5 @@ export interface TextProps extends RNTextProps {
   style?: TextStyle | TextStyle[]
   size?: number
   color?: string
+  font?: FontsTypes
 }

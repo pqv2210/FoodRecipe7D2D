@@ -1,1 +1,6 @@
 export * from "./function"
+export * from "./storage"
+export * from "./data-type"
+export * from "./assets/icons"
+export * from "./assets/images"
+export * from "./fonts"

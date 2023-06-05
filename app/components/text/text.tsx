@@ -3,8 +3,9 @@ import { Text as ReactNativeText } from "react-native"
 import { translate } from "@i18n"
 import { colors } from "@theme"
 import { TextProps } from "./text.props"
+import { fonts } from "@utils"
 
-export function Text(props: TextProps) {
+export const Text = function memo(props: TextProps) {
   const {
     tx,
     txOptions,
@@ -13,6 +14,7 @@ export function Text(props: TextProps) {
     style: styleOverride,
     size = 14,
     color = colors.black,
+    font = "medium",
     ...rest
   } = props
 
@@ -34,6 +36,7 @@ export function Text(props: TextProps) {
       ...styleOverride,
       color: color,
       fontSize: size,
+      fontFamily: fonts[font],
     },
   ]
 

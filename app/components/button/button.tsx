@@ -8,7 +8,7 @@ import {
 import { Text } from ".."
 import { colors } from "@theme"
 
-export function Button(props: ButtonProps) {
+export const Button = function memo(props: ButtonProps) {
   const {
     tx,
     text,
@@ -47,18 +47,16 @@ export function Button(props: ButtonProps) {
     }).start()
   }
 
-  const viewStyle = [
-    styleOverride,
-    { backgroundColor: bgColor ?? colors.white },
-  ]
+  const viewStyle = {
+    ...styleOverride,
+    backgroundColor: bgColor ?? colors.white,
+  }
 
-  const textStyle = [
-    {
-      ...textStyleOverride,
-      fontSize: size ?? 14,
-      color: textColor ?? colors.black,
-    },
-  ]
+  const textStyle = {
+    ...textStyleOverride,
+    fontSize: size ?? 14,
+    color: textColor ?? colors.black,
+  }
 
   const content = children || (
     <Text tx={tx} text={text} style={textStyle} txOptions={txOptions} />
@@ -66,7 +64,6 @@ export function Button(props: ButtonProps) {
 
   return (
     <TouchableWithoutFeedback
-      style={viewStyle}
       onPressIn={onPressIn}
       onPressOut={onPressOut}
       disabled={loading}
