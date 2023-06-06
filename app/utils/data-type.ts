@@ -24,4 +24,5 @@ export interface FoodProps {
     type?: string
     effect?: string
   }
+  isFavorite: boolean
 }

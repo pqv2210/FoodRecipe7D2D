@@ -1,18 +1,16 @@
-import React from "react"
-import { memo } from "react"
+import React, { memo } from "react"
 import { Image, StyleSheet, View } from "react-native"
-import { FoodProps, IconTypes, images, isEmptyString } from "@utils"
+import { FoodProps, IconTypes, images } from "@utils"
 import { Button, Icon, Row, Text } from "@components"
+import { colors } from "@theme"
 
-export interface ItemProps {
+export interface ItemFoodProps {
   item: FoodProps
   onPress: () => void
 }
 
-export const Item = memo((props: ItemProps) => {
+export const ItemFood = memo((props: ItemFoodProps) => {
   const { item, onPress } = props
-
-  const source: string = isEmptyString(item.image) ? "AnimalFat" : item.image
 
   const renderStat = (icon: IconTypes, value?: string) => (
     <Row style={styles.rowStat}>
@@ -25,7 +23,7 @@ export const Item = memo((props: ItemProps) => {
     <Button style={styles.container} onPress={onPress}>
       <View>
         <Image style={styles.background} source={images.background} />
-        <Image style={styles.image} source={images[source]} />
+        <Image style={styles.image} source={images[item.image]} />
       </View>
       <View style={styles.wrapInfo}>
         <Text size={16} font="bold" text={item.name} />
@@ -35,6 +33,12 @@ export const Item = memo((props: ItemProps) => {
           {renderStat("health", item?.effectOnHealth)}
           {renderStat("stamina", item?.effectOnMaxStamina)}
         </Row>
+        <Button style={styles.btnFavorite}>
+          <Icon
+            size={22}
+            icon={item?.isFavorite ? "favoriteFilled" : "favorite"}
+          />
+        </Button>
       </View>
     </Button>
   )
@@ -65,14 +69,17 @@ const styles = StyleSheet.create({
     alignItems: "center",
     paddingVertical: 10,
   },
-  wrapStat: {
-    flex: 1,
-  },
+  wrapStat: { flex: 1 },
   rowStat: {
     flex: 1,
     justifyContent: "center",
   },
-  value: {
-    marginLeft: 5,
+  value: { marginLeft: 5 },
+  btnFavorite: {
+    position: "absolute",
+    top: 0,
+    right: 0,
+    padding: 10,
+    backgroundColor: colors.white,
   },
 })

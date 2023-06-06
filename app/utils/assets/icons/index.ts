@@ -7,6 +7,8 @@ export const icons: AssetType = {
   stamina: require("./Stamina.png"),
   back: require("./Back.png"),
   menubar: require("./MenuBar.png"),
+  favorite: require("./Favorite.png"),
+  favoriteFilled: require("./FavoriteFilled.png"),
 }
 
 export type IconTypes = keyof typeof icons
