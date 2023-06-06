@@ -2,10 +2,14 @@ import { I18n, TranslateOptions } from "i18n-js"
 import en from "./translations/en.json"
 import vi from "./translations/vi.json"
 
-const i18n = new I18n({ ...en, ...vi })
+const i18n = new I18n()
 
 i18n.enableFallback = true
 i18n.defaultLocale = "en"
+i18n.translations = {
+  en,
+  vi,
+}
 
 type DefaultLocale = typeof en
 export type TxKeyPath = RecursiveKeyOf<DefaultLocale>

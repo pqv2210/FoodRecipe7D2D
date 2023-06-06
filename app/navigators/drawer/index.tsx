@@ -1,13 +1,20 @@
 import React from "react"
 import { createDrawerNavigator } from "@react-navigation/drawer"
-import { HomeScreen } from "@screens"
+import { BOTTOM, SCREEN_OPTIONS } from "@utils"
+import { VanillaBottomTabNavigator } from "../bottom-tab"
+import { DrawerTypes } from "@navigators"
 
-const Drawer = createDrawerNavigator()
+const Drawer = createDrawerNavigator<DrawerTypes>()
 
 export function DrawerNavigator() {
   return (
-    <Drawer.Navigator initialRouteName="Home">
-      <Drawer.Screen name="Home" component={HomeScreen} />
+    <Drawer.Navigator
+      initialRouteName={BOTTOM.vanilla}
+      screenOptions={SCREEN_OPTIONS}>
+      <Drawer.Screen
+        name={BOTTOM.vanilla}
+        component={VanillaBottomTabNavigator}
+      />
     </Drawer.Navigator>
   )
 }

@@ -18,6 +18,7 @@ export const RootNavigation = {
     return {} as any
   },
   dispatch(_action: NavigationAction) {},
+  openDrawer() {},
 }
 
 export const navigationRef = createNavigationContainerRef()
