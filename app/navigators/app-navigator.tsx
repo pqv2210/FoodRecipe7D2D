@@ -1,7 +1,7 @@
 import React from "react"
 import { NavigationContainer } from "@react-navigation/native"
 import { navigationRef, useBackButtonHandler } from "./navigator-utilities"
-import { DrawerNavigator } from "./drawer"
+import { DrawerNavigator } from "@navigators"
 
 const exitRoutes = ["home"]
 

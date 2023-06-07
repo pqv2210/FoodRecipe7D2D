@@ -1,6 +1,5 @@
 import { memo } from "react"
-import { Row } from "../row/row"
-import { Button, Icon, Text } from "@components"
+import { Button, Icon, Row, Text } from "@components"
 import { useNavigation } from "@react-navigation/native"
 import { StyleSheet } from "react-native"
 import { colors } from "@theme"

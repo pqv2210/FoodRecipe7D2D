@@ -1,19 +1,19 @@
-import * as React from "react"
+import React, { memo } from "react"
 import { ButtonProps, scales } from "./button.props"
 import {
   ActivityIndicator,
   Animated,
   TouchableWithoutFeedback,
 } from "react-native"
-import { Text } from ".."
+import { Text } from "@components"
 import { colors } from "@theme"
 
-export const Button = function memo(props: ButtonProps) {
+export const Button = memo((props: ButtonProps) => {
   const {
     tx,
     text,
     style: styleOverride,
-    textStyle: textStyleOverride,
+    textStyle,
     children,
     bgColor,
     textColor,
@@ -50,17 +50,12 @@ export const Button = function memo(props: ButtonProps) {
   const viewStyle = {
     ...styleOverride,
     backgroundColor: bgColor ?? colors.white,
+    transform: [
+      {
+        scale: scaleType,
+      },
+    ],
   }
-
-  const textStyle = {
-    ...textStyleOverride,
-    fontSize: size ?? 14,
-    color: textColor ?? colors.black,
-  }
-
-  const content = children || (
-    <Text tx={tx} text={text} style={textStyle} txOptions={txOptions} />
-  )
 
   return (
     <TouchableWithoutFeedback
@@ -68,21 +63,22 @@ export const Button = function memo(props: ButtonProps) {
       onPressOut={onPressOut}
       disabled={loading}
       {...rest}>
-      <Animated.View
-        style={{
-          transform: [
-            {
-              scale: scaleType,
-            },
-          ],
-          ...viewStyle,
-        }}>
+      <Animated.View style={viewStyle}>
         {loading ? (
           <ActivityIndicator color={loadingColor ?? colors.black} />
         ) : (
-          content
+          children ?? (
+            <Text
+              style={textStyle}
+              tx={tx}
+              size={size ?? 14}
+              color={textColor ?? colors.black}
+              text={text}
+              txOptions={txOptions}
+            />
+          )
         )}
       </Animated.View>
     </TouchableWithoutFeedback>
   )
-}
+})

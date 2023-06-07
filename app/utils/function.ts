@@ -1,8 +1,17 @@
-import { Platform } from "react-native"
+import { Dimensions, Platform } from "react-native"
 import DeviceInfo from "react-native-device-info"
+
+export const { width, height } = Dimensions.get("window")
+
+export const DRAWER_WIDTH = width / 1.5
 
 export const SCREEN_OPTIONS = {
   headerShown: false,
+}
+
+export const DRAWER_SCREEN_OPTIONS = {
+  ...SCREEN_OPTIONS,
+  width: DRAWER_WIDTH,
 }
 
 /**

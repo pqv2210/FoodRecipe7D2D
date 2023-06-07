@@ -2,6 +2,7 @@ import { AssetType } from "@utils"
 
 export const images: AssetType = {
   background: require("./background.png"),
+  banner: require("./banner.png"),
   AnimalFat: require("./AnimalFat.webp"),
   Blueberries: require("./Blueberries.webp"),
   Corn: require("./Corn.webp"),
