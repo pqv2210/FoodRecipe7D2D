@@ -1,4 +1,4 @@
-import React, { memo, useState } from "react"
+import React, { memo } from "react"
 import { StyleSheet } from "react-native"
 import { Button, Icon, Row, Text } from "@components"
 import { TxKeyPath } from "@i18n"
@@ -17,35 +17,33 @@ interface BottomMenuProps {
 }
 
 export const BottomMenu = memo((props: BottomMenuProps) => {
-  const { navigation } = props
-
-  const [currentStack, setCurrentStack] = useState<STACK>(STACK.vanillaList)
+  const { state, navigation } = props
 
   const onPress = (stack: STACK) => () => {
     navigation.navigate(stack)
-    setCurrentStack(stack)
   }
 
-  const renderButton = (name: TxKeyPath, icon: IconTypes, stack: STACK) => (
+  const renderButton = (
+    name: TxKeyPath,
+    icon: IconTypes,
+    index: number,
+    stack: STACK,
+  ) => (
     <Button style={styles.btn} onPress={onPress(stack)}>
-      <Icon
-        size={20}
-        icon={icon}
-        color={currentStack === stack ? colors.black : colors.white}
-      />
+      <Icon size={20} icon={icon} />
       <Text
         style={styles.tx}
         size={12}
         tx={name}
-        color={currentStack === stack ? colors.black : colors.white}
+        font={state.index === index ? "bold" : "medium"}
       />
     </Button>
   )
 
   return (
     <Row>
-      {renderButton("all", "back", STACK.vanillaList)}
-      {renderButton("all", "back", STACK.favorite)}
+      {renderButton("all", "list", 0, STACK.vanillaList)}
+      {renderButton("favorite", "favoriteFilled", 1, STACK.favorite)}
     </Row>
   )
 })
