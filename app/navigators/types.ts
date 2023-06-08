@@ -13,6 +13,7 @@ export type VanillaBottomTabTypes = {
 
 export type DrawerTypes = {
   [BOTTOM.vanilla]: undefined
+  [SCREEN.appInfo]: undefined
 }
 
 export type RootNavigationType = DrawerNavigationProp<DrawerTypes>

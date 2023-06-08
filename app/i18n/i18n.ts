@@ -26,7 +26,7 @@ type RecursiveKeyOf<TObj extends Record<string, unknown>> = {
  * @param key The i18n key.
  */
 export function translate(key: TxKeyPath, options?: TranslateOptions) {
-  return key ? i18n.t(key, options) : null
+  return key ? i18n.t(key, options) : `missing ${key}`
 }
 
 export type TxOptions = TranslateOptions

@@ -1,4 +1,13 @@
 {
   "all": "All Food",
-  "vanilla": "Vanilla"
+  "vanilla": "Vanilla",
+  "appInfo": {
+    "header": "App Info",
+    "intro": "Food Recipe 7D2D is a companion app made by my self.",
+    "note1": "- Not approved by/associated with The Fun Pimps Entertainment LLC(",
+    "note2": "- Not an official 7 Days to Die product.",
+    "note3": "If you want to learn more about 7 Days to Die, you can found at ",
+    "or": " or "
+  },
+  "appVersion": "App Version: %{version}"
 }

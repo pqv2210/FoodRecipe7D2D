@@ -1,6 +1,7 @@
 export enum SCREEN {
   vanillaList = "VanillaList",
   favorite = "Favorite",
+  appInfo = "AppInfo",
 }
 
 export enum STACK {

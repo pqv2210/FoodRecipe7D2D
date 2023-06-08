@@ -1,5 +1,10 @@
-import { Dimensions, Platform } from "react-native"
+import { Alert, Dimensions, Linking, Platform } from "react-native"
 import DeviceInfo from "react-native-device-info"
+
+export const PRODUCER_NAME = "https://thefunpimps.com"
+export const OFFICIAL_WEBSITE = "https://7daystodie.com"
+export const FANDOM_WEBSITE =
+  "https://7daystodie.fandom.com/wiki/7_Days_to_Die_Wiki"
 
 export const { width, height } = Dimensions.get("window")
 
@@ -49,4 +54,14 @@ export const isIPhoneX = () => {
     return true
   }
   return isTrue
+}
+
+export const onOpenLink = (link: string) => () => {
+  Linking.canOpenURL(link)
+    .then(() => {
+      Linking.openURL(link)
+    })
+    .catch(() => {
+      Alert.alert("Error", "Error link.")
+    })
 }
