@@ -2,6 +2,7 @@ export enum SCREEN {
   vanillaList = "VanillaList",
   favorite = "Favorite",
   appInfo = "AppInfo",
+  foodDetail = "FoodDetail",
 }
 
 export enum STACK {

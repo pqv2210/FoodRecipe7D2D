@@ -4,25 +4,34 @@ export interface AssetType {
   [name: string]: ImageSourcePropType
 }
 
+export interface EffectProps {
+  fullness: string
+  hydration: string
+  maxStamina?: string
+  health: string
+  dysenteryChange: string
+}
+
+export interface PriceProps {
+  sell: string
+  buy: string
+}
+
+export interface BuffProps {
+  type?: string
+  effect?: string
+  duration?: string
+}
+
 export interface FoodProps {
   id: string
   name: string
   image: string
   type: string
-  effectOnFullness: string
-  effectOnHydration: string
-  effectOnMaxStamina?: string
-  effectOnHealth: string
-  dysenteryChange: string
-  price: {
-    sell: string
-    buy: string
-  }
+  effects: EffectProps
+  price: PriceProps
   maxStack: string
   description: string
-  buff?: {
-    type?: string
-    effect?: string
-  }
+  buff?: BuffProps
   isFavorite: boolean
 }

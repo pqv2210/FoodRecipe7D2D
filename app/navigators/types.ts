@@ -1,10 +1,13 @@
 import { DrawerNavigationProp } from "@react-navigation/drawer"
-import { BOTTOM, SCREEN, STACK } from "@utils"
+import { NavigationProp } from "@react-navigation/native"
+import { BOTTOM, FoodProps, SCREEN, STACK } from "@utils"
 
 export type VanillaStackTypes = {
   [SCREEN.vanillaList]: undefined
-  [SCREEN.favorite]: undefined
+  [SCREEN.foodDetail]: { data: FoodProps }
 }
+
+export type VanillaStackType = NavigationProp<VanillaStackTypes>
 
 export type VanillaBottomTabTypes = {
   [STACK.vanillaList]: undefined

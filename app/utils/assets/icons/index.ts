@@ -10,6 +10,7 @@ export const icons: AssetType = {
   favorite: require("./Favorite.png"),
   favoriteFilled: require("./FavoriteFilled.png"),
   list: require("./List.png"),
+  arrowDown: require("./ArrowDown.png"),
 }
 
 export type IconTypes = keyof typeof icons

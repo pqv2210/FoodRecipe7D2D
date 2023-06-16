@@ -8,11 +8,12 @@ import { RootNavigationType } from "@navigators"
 
 interface HeaderProps {
   isRoot?: boolean
-  txHeader: TxKeyPath
+  txHeader?: TxKeyPath
+  textHeader?: string
 }
 
 export const Header = memo((props: HeaderProps) => {
-  const { isRoot = false, txHeader } = props
+  const { isRoot = false, txHeader, textHeader } = props
 
   const navigation = useNavigation<RootNavigationType>()
 
@@ -35,7 +36,7 @@ export const Header = memo((props: HeaderProps) => {
   return (
     <Row style={styles.container}>
       {renderLeftBtn()}
-      <Text font="bold" size={17} tx={txHeader} />
+      <Text font="bold" size={17} tx={txHeader} text={textHeader} />
     </Row>
   )
 })

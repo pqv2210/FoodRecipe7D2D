@@ -10,5 +10,28 @@
     "or": " or "
   },
   "favorite": "Favorite",
-  "appVersion": "App Version: %{version}"
+  "appVersion": "App Version: %{version}",
+  "consumptionEffect": "Consumption Effects",
+  "effect": {
+    "title": "Consumption Effects",
+    "fullness": "Effects on Fullness",
+    "hydration": "Effects on Hydration",
+    "maxStamina": "Effects on Max Stamina",
+    "health": "Effects on Health",
+    "dysenteryChange": "Dysentery change"
+  },
+  "buff": {
+    "title": "Buff",
+    "type": "Type",
+    "effect": "Effect",
+    "duration": "Duration"
+  },
+  "price": {
+    "title": "Price",
+    "sell": "Sell",
+    "buy": "Buy"
+  },
+  "maxStack": "Max Stack",
+  "description": "Description",
+  "cooking": "Cooking recipe"
 }

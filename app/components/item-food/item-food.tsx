@@ -28,10 +28,10 @@ export const ItemFood = memo((props: ItemFoodProps) => {
       <View style={styles.wrapInfo}>
         <Text size={16} font="bold" text={item.name} />
         <Row style={styles.wrapStat}>
-          {renderStat("fullness", item?.effectOnFullness)}
-          {renderStat("hydration", item?.effectOnHydration)}
-          {renderStat("health", item?.effectOnHealth)}
-          {renderStat("stamina", item?.effectOnMaxStamina)}
+          {renderStat("fullness", item?.effects?.fullness)}
+          {renderStat("hydration", item?.effects?.hydration)}
+          {renderStat("health", item?.effects?.health)}
+          {renderStat("stamina", item?.effects?.maxStamina)}
         </Row>
         <Button style={styles.btnFavorite}>
           <Icon
